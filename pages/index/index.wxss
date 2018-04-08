@@ -45,7 +45,7 @@
   width: 100%;
   background-color: #000; /*颜色需与主题大背景色一致，不然就露陷了*/
   position: relative;
-  top: 22px; /*这个是用来调节线高*/
+  top: 32rpx; /*这个是用来调节线高*/
   left: 0;
 }
 
@@ -55,8 +55,9 @@
   color: #000;
   padding: 0 8px 0 8px;
   position: relative;
-  font-size: 28px;
+  font-size: 32rpx;
   justify-content: center;
+  font-weight: bold;
 }
 
 /*四周阴影*/
@@ -80,21 +81,21 @@
 /* item 样式,注意:使用 display: block来让该布局成为块级元素*/
 
 .item-image {
-  margin-top: 10px;
-  height: 160px;
+  margin-top: 10rpx;
+  height: 200rpx;
   width: 100%;
 }
 
 .item-title {
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 20rpx;
   color: #333;
 }
 
 .item-msg {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-weight: bold;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
   color: #999;
   line-height: 140%;
-  font-size: 14px;
+  font-size: 14rpx;
 }
