@@ -1,0 +1,5 @@
+<!--pages/found/found.wxml-->
+<view class='flex-container'>
+  <image src="/images/found_no_data.png" class="no-data-img" mode="aspectFill" />
+  <text class='no-data-text'>敬请期待......</text>
+</view>

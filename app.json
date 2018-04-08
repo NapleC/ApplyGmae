@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/competition/competition",
+    "pages/index/index",
+    "pages/found/found",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#dfdfdf",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "竞哥哥",
+    "navigationBarTextStyle": "#ffffff"
+  },
+  "tabBar": {
+    "backgroundColor": "black",
+    "selectedColor": "#fff",
+    "borderStyle": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/ic_nav_home_hide.png",
+        "selectedIconPath": "images/ic_nav_home_show.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/competition/competition",
+        "iconPath": "images/ic_nav_competition_hide.png",
+        "selectedIconPath": "images/ic_nav_competition_show.png",
+        "text": "赛事"
+      },
+      {
+        "pagePath": "pages/found/found",
+        "iconPath": "images/ic_nav_found_hide.png",
+        "selectedIconPath": "images/ic_nav_found_show.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/ic_nav_mine_hide.png",
+        "selectedIconPath": "images/ic_nav_mine_show.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
