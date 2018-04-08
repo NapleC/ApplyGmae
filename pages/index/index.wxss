@@ -1,8 +1,14 @@
 /**index.wxss**/
+
 .userinfo {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  background: #000;
+  -moz-box-shadow: 0px 2px 2px #909090;
+  -webkit-box-shadow: 0px 2px 2px #909090;
+  box-shadow: 0px 2px 2px #909090;
 }
 
 .userinfo-avatar {
@@ -13,9 +19,82 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #fff;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+/* 横线文字 */
+
+.top-text-area {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.top-text-area-middle-line:before {
+  content: '';
+  display: block;
+  height: 2rpx;
+  width: 100%;
+  background-color: #000; /*颜色需与主题大背景色一致，不然就露陷了*/
+  position: relative;
+  top: 22px; /*这个是用来调节线高*/
+  left: 0;
+}
+
+.top-text-area-line-text {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 0 8px 0 8px;
+  position: relative;
+  font-size: 28px;
+  justify-content: center;
+}
+
+/*四周阴影*/
+
+.list {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/*合并theme的*/
+.list-item {
+  width: 90%;
+  padding: 5px 10px 5px 10px;
+  margin: 30rpx 2.5%;
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2rpx 2rpx #909090;
+  -webkit-box-shadow: 0 2rpx 2rpx #909090;
+  box-shadow: 0 2rpx 2rpx #909090;
+}
+
+/* item 样式,注意:使用 display: block来让该布局成为块级元素*/
+
+.item-image {
+  margin-top: 10px;
+  height: 160px;
+  width: 100%;
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+
+.item-msg {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #999;
+  line-height: 140%;
+  font-size: 14px;
 }

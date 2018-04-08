@@ -1,13 +1,27 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="userinfo">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+</view>
+<view class="top-text-area">
+  <view class="top-text-area-middle-line">
+    <span class="top-text-area-line-text">报名赛事</span>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+</view>
+<!-- 纵向列表 -->
+<view class="list">
+  <block wx:for="{{listData}}" wx:key="_id">
+    <view class="list-item">
+      <image src="{{item.url}}" class="item-image" mode="aspectFill" />
+      <view class="item-title" bindtap="itemClick" id="{{index}}">
+        <text>类别: {{item.type}}</text>
+        <view class="item-title">
+          <text>时间: {{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>
