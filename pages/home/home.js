@@ -66,7 +66,8 @@ Page({
         wx.hideNavigationBarLoading()
       },
     })
-  }, swiperChange: function (e) {
+  },
+   swiperChange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
     })

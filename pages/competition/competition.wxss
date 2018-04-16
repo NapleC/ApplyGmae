@@ -1,4 +1,7 @@
 /* pages/competition/competition.wxss */
+page {
+  background-color: #EDECEC;
+}
 .swiper-container{  
   position: relative;  
 }  
@@ -29,4 +32,48 @@
 .swiper-container .dots .dot.active{  
   background: #f80;  
   color:#fff;  
+}
+/*热门活动*/
+.flex-activity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/* 纵向列表排列 */
+.list {
+  width: 96%;
+}
+
+/* item 样式,注意:使用 display: block来让该布局成为块级元素*/
+
+.list-item {
+  padding: 20rpx;
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  background: #fff;
+  margin-top: 20rpx;
+  border-radius:8rpx; 
+}
+
+.item-side {
+  border-radius: 8rpx;
+  height: 150rpx;
+  width: 260rpx;
+  flex-grow: 0;
+}
+
+.item-main {
+  display: flex;
+  flex-grow: 1;
+  max-width: 480rpx;
+  margin-left: 10rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-text {
+  color: #7D7D7D;
+  font-size: 24rpx;
 }

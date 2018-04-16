@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/competition/competition",
-    "pages/index/index",
+    "pages/home/home",
     "pages/found/found",
+    "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {

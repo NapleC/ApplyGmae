@@ -1,17 +1,35 @@
 <!--pages/competition/competition.wxml-->
-<view class="recommend" >  
-  <view class="swiper-container">  
-    <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">  
-      <block wx:for="{{slider}}" wx:key="unique">  
-        <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">  
-          <image src="{{item.picUrl}}" class="img"></image>  
-        </swiper-item>  
-      </block>  
-    </swiper>  
-    <view class="dots">  
-      <block wx:for="{{slider}}" wx:key="unique">  
-        <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>  
-      </block>  
-    </view>  
-  </view>  
+<view class="swiper-container">
+  <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
+        <image src="{{item.picUrl}}" class="img"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
+    </block>
+  </view>
+</view>
+<!-- 纵向列表 -->
+
+  <view class="flex-activity">
+<view class="list" bindtap="itemClick" id="{{index}}">
+  <block wx:for="{{listData}}" wx:key="_id">
+    <view class="list-item">
+      <image src="{{item.url}}" class="item-side" mode="aspectFill" />
+      <view class="item-main">
+        <view>
+          <text class="note2_text">这是哪种类别: {{item.type}}</text>
+        </view>
+        <view>
+          <text class="item-text">时间: {{item.desc}} </text>
+          <text class="item-text"> 来源: {{item.who}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
 </view>
