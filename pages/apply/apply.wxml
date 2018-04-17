@@ -1,0 +1,57 @@
+<image class="image" src="{{topImageUrl}}" mode="aspectFit" />
+
+<view class="">
+  <text class='text-title-center'>夺冠荣耀，十万奖金！</text>
+  <text class='text-title-center'>踊跃报名，热血来战！</text>
+  <text class='text-title-center'>做自己的王者！</text>
+  <text class='text-title-center'>报名时间：2018年4月1日-4月25日</text>
+</view>
+
+<view class="top-text-area">
+  <view class="top-text-area-middle-line">
+    <span class="top-text-area-line-text">校园专场报名</span>
+  </view>
+</view>
+<view class='home_address' bindtap='theLolRule'>
+  <view class="rule-entrance-area">
+    <text class='rule-text'>赛事规则</text>
+    <image class="rule-image" src="/images/lol_rule_more.png" mode="scaleToFill" />
+  </view>
+</view>
+
+<picker bindchange="picker_model" value="{{modelIndex}}" range="{{model}}">
+  <view class="section">
+    <text class='text-picker'>{{modelText}}</text>
+    <image class="more-image" src="/images/lol_more.png" mode="scaleToFill" />
+  </view>
+</picker>
+<view class="section">
+  <input class="input" confirm-type="next" name="teamAddress" bindinput='teamAddressInput' placeholder-style="color:#9b9ba3" placeholder="请填写战队学校" />
+</view>
+<!--分割线-->
+<view class='divLine'></view>
+<text class='text-title'>• 请如实填写您的个人信息</text>
+<view class="section">
+  <input class="input" confirm-type="next" name="teamName" bindinput='teamNameInput' placeholder-style="color:#9b9ba3" placeholder="请输入您的队伍名称" />
+</view>
+<view class="section">
+  <input class="input" confirm-type="next" name="leaderName" bindinput='leaderNameInput' placeholder-style="color:#9b9ba3" placeholder="请输入队长姓名" />
+</view>
+<view class="section">
+  <input type='number' class="input" confirm-type="next" name="leaderQQ" bindinput='leaderQQInput' placeholder-style="color:#9b9ba3" placeholder="请输入队长QQ号" />
+</view>
+<view class="section">
+  <input type='number' confirm-type="next" class="input" name="leaderPhone" bindinput='leaderPhoneInput' placeholder-style="color:#9b9ba3" placeholder="请输入队长手机号" />
+</view>
+<view class="section">
+  <input type='idcard' class="input" confirm-type="next" name="leaderID" bindinput='leaderIDInput' placeholder-style="color:#9b9ba3" placeholder="请输入队长身份证号" />
+</view>
+<!--分割线-->
+<view class='divLine'></view>
+<view class="bottom-center">
+  <view class="tips-section">
+    <text class='text-tips'>请队长务必添加赛事官方QQ群：{{areaQQNumber}}</text>
+  </view>
+  <image bindtap='lolSubmitInfo' class="pic_background" src="../../images/lol_submit.png" mode="aspectFit"></image>
+  <image  class="bottom-pic-background" src="https://xys.jggjmm.com/SCWeb/commons/images/rule_bottom.png" mode="aspectFit"></image>
+</view>

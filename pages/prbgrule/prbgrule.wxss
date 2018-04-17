@@ -1,0 +1,41 @@
+/* pages/prbgrule/prbgrule.wxss */
+
+page {
+  background-color: #1d2122;
+}
+
+.title-view-padding{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.view-padding{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tips-view-padding{
+  padding-left: 46px;
+  padding-right: 20px;
+}
+
+.text-title-top{
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  justify-content: center;
+  display: flex; 
+  align-items: center;
+}
+
+.text-title{
+  width: 100%;
+  color: white;
+  font-size: 16px;
+}
+.text-content{
+  width: 100%;
+  color: white;
+  font-size: 12px;
+}

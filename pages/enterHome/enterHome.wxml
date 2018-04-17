@@ -1,0 +1,6 @@
+<!--pages/enter/enter.wxml-->
+<image class="background-image" src="../../images/home_bg.png"></image>
+<view class="suheng">
+  <image class='click-btn' bindtap='lol' src="../../images/lol_btn.png"></image>
+  <image class='click-btn' bindtap='prbg' src="../../images/prbg_btn.png"></image>
+</view>

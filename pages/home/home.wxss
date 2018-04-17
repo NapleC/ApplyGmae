@@ -1,4 +1,50 @@
-.swiper-container {
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.click-btn {
+  width: 220px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.suheng {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.click-btn {
+  width: 220px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.suheng {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translatex(-50%);
+}.swiper-container {
   position: relative;
 }
 

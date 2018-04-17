@@ -16,7 +16,14 @@ Page({
     ],
     swiperCurrent: 0
   },
+  homeItemClick: function (e) {
+    var $data = e.currentTarget.dataset; 
+    console.log("e data:", $data.id );
 
+    wx.navigateTo({
+      url: '../enterHome/enterHome?competitionId=' + $data.id + '&val=hello,bright789!!!&showBtn=false',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,7 +46,6 @@ Page({
       url: 'https://gank.io/api/data/福利/10/' + this.data.pageNum,
       data: {}, // 这里写请求参数
       success: function (res) {
-        console.log("请求成功：" + res)
         wx.stopPullDownRefresh()
         if (that.data.pageNum == 1) {
           that.data.listData = [] // 清空数据
@@ -70,6 +76,14 @@ Page({
    swiperChange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
+    })
+  }, 
+  swipclick: function (e) {
+    // 点击图片触发事件
+    console.log(this.data.banners[this.data.swiperCurrent]);
+
+    wx.navigateTo({
+      url: '../apply/apply?competitionId=' + this.data.banners[this.data.swiperCurrent]._id + '&val=hello,banner!!!&showBtn=true',
     })
   },
 

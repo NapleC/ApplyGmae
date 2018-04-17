@@ -1,0 +1,104 @@
+<!--pages/lolrule/lolrule.wxml-->
+<image class="top-image" src="{{topImageUrl}}" mode="widthFix" />
+<view class="top-text-area">
+  <view class="top-text-area-middle-line">
+    <span class="top-text-area-line-text">赛事规则</span>
+  </view>
+</view>
+<view class='title-view-padding'>
+  <text class='text-title'>赛事奖金</text>
+  <text class='text-content'>（单位：元）</text>
+</view>
+
+<view class="reward-area">
+  <image class="reward-image" src="{{moneyImage}}" mode="widthFix" />
+</view>
+<view class='title-view-padding'>
+  <text class='text-title'>比赛报名</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>一、通过扫描“京东报名H5”进行线上报名。线上报名时需填写战队名、姓名、QQ号，联系方式。在参赛时，报名战队成员需携带身份证、以便工作人员在现场确认选手参赛资格。未能在规定时间提前到场且未提前与组委会沟通的队伍，则视为弃权。</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>二、比赛账号：参赛选手须在比赛服务器比赛，自备QQ帐号。</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>三、比赛名单：每支队伍需在报名时提供5名选手名单(含队长)，最多可报名6人(报名后名单不得更换)，获得省赛资格后，每支队伍可更换1名队员。</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>四、比赛报名属于自愿参加、风险自担、责任自负。如在比赛中及比赛往返过程中发生人身伤害或财产损失之意外，官方不对任何队伍或选手承担民事赔偿责任或补充责任。</text>
+</view>
+
+<view class='title-view-padding'>
+  <text class='text-title'>参赛限制</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>玩家在取得京东杯海选晋级资格之后，不允许在参加其他海选赛的比赛，特殊情况如战队解散，选手需向赛事组委会说明，组委会向该队队长核实情况属实后队员方可参赛，该战队之前获得的海选晋级资格自动取消，名额顺延。</text>
+</view>
+
+<view class='title-view-padding'>
+  <text class='text-title'>比赛模式</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>01、赛事均为5v5、房间模式：竞技征召模式</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>02、海选赛：采用BO1(单场淘汰制)</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>03、省赛：采用BO1(单场淘汰制);冠军赛采用BO3</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>04、大区赛：采用BO3淘汰赛</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>05、大区淘汰赛：采用BO3淘汰赛</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>06、总决赛：采用BO3淘汰赛</text>
+</view>
+
+<view class='title-view-padding'>
+  <text class='text-title'>比赛抽签</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>由裁判组织双方队长猜拳一轮，胜方开设房间，并在房间左侧，败者在右侧;</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>空一次。如出现当前战队都出现已轮空一次情况，则抽签决定下一轮轮空战队)</text>
+</view>
+
+<view class='title-view-padding'>
+  <text class='text-title'>比赛高压线</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>违反以下任意高压线的战队和选手将被主办方取消参赛资格</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>高压线1：比赛现场不得发生打架斗殴、辱骂他人的行为;</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>高压线2：比赛中不得使用任何第三方软件(聊天沟通工具除外);</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>高压线3：比赛中不得使用带有攻击性或嘲讽性的言语及口吻(包括文字与语言);</text>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>高压线4：战队及个人昵称的命名不可出现侵权、色情、反动、低俗等信息。;</text>
+</view>
+
+
+<view class='title-view-padding'>
+  <text class='text-content'>注：具体比赛细则，请查看群文件或移步至官网查看！</text>
+</view>
+
+<view class='tips-view-padding'>
+  <text class='text-content'>比赛最终解释权，归主办方所有。</text>
+</view>
+<view class='tips-view-padding'>
+  <text class='text-content'>报名名额有限，最终报名资格由官方最终确认。</text>
+</view>
+
+ <view class="reward-area">
+  <image bindtap='lolBack' class="reward-image" src="{{bottomImage}}" mode="widthFix"></image>
+</view> 

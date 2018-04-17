@@ -3,7 +3,7 @@
   <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
     <block wx:for="{{slider}}" wx:key="unique">
       <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
-        <image src="{{item.picUrl}}" class="img"></image>
+        <image src="{{item.picUrl}}" class="img" ></image>
       </swiper-item>
     </block>
   </swiper>
