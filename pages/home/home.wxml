@@ -4,7 +4,7 @@
     <swiper autoplay="auto" interval="3000" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
       <block wx:for="{{banners}}" wx:key="_id">
         <swiper-item>
-          <image src="{{item.url}}" class="image" mode="aspectFill" bindtap="swipclick" id='{{index}}' />
+          <image src="{{item.matchBannerImg}}" class="image" mode="aspectFill" bindtap="swipclick" id='{{index}}' />
         </swiper-item>
       </block>
     </swiper>
@@ -15,23 +15,24 @@
       </block>
     </view>
   </view>
-  <view>
+  <view >
     <text class='topic-center-text'>其他地区赛事</text>
   </view>
   <view class="other-area-container">
-    <view class="other-area-item"><text class='other-area-text'>联通</text></view>
-    <view class="other-area-item"><text class='other-area-text'>移动</text></view>
-    <view class="other-area-item"><text class='other-area-text'>电信</text></view>
-    <view class="other-area-item"><text class='other-area-text'>腾讯</text></view>
-    <view class="other-area-item"><text class='other-area-text'>京东</text></view>
+    
+    <image class='.other-area-image' src="../../images/middle1.png" mode="aspectFill" />
+    
+    <image class='.other-area-image' src="../../images/middle2.png" mode="aspectFill" />
+    
+    <image class='.other-area-image' src="../../images/middle3.png" mode="aspectFill" />
   </view>
 
   <view>
     <text class='topic-text'>热门活动</text>
   </view>
   <view class="flex-activity">
-    <image src="https://ws1.sinaimg.cn/large/610dc034ly1fp9qm6nv50j20u00miacg.jpg" class="activity-one-area" mode="aspectFill" />
-    <image src="https://ws1.sinaimg.cn/large/610dc034ly1fp9qm6nv50j20u00miacg.jpg" class="activity-one-area" mode="aspectFill" />
+    <image src="../../images/content_left.png" class="activity-one-area" mode="aspectFill" />
+    <image src="../../images/content_right.png" class="activity-one-area" mode="aspectFill" />
   </view>
   <view>
     <text class='topic-text'>热门资讯</text>

@@ -1,6 +1,9 @@
 <!--pages/enter/enter.wxml-->
-<image class="background-image" src="../../images/home_bg.png"></image>
+<image class="background-image" src="{{bgImageUrl}}" mode="scaleToFill" />
 <view class="suheng">
-  <image class='click-btn' bindtap='lol' src="../../images/lol_btn.png"></image>
-  <image class='click-btn' bindtap='prbg' src="../../images/prbg_btn.png"></image>
+  <block wx:for="{{btnData}}" wx:key="_id">
+    <view class="list-item" bindtap="btnItemClick" data-index="{{index}}" data-id='{{item.matchGameId}}'>
+      <image class='click-btn' bindtap='prbg' src="../../images/prbg_btn.png" />
+    </view>
+  </block>
 </view>

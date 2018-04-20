@@ -1,6 +1,6 @@
 /* pages/lolrule/lolrule.wxss */
 page {
-  background-color: #130f35;
+  background-color: #0a080e;
 }
 
 .title-view-padding{

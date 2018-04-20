@@ -1,0 +1,7 @@
+/* pages/normalRule/normalRule.wxss */
+page {
+  background-color: #0a080e;
+}
+.background-image {
+  width: 100%;
+}

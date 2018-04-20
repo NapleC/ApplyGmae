@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    modelText: '请选择参赛城市',
+    modelText: '',
     qqAllNumber: '',
     areaQQNumber: '',
     model: '',
@@ -15,95 +15,71 @@ Page({
     leaderPhone: '',
     leaderQQ: '',
     leaderID: '',
-    player1Name: '',
-    player1QQ: '',
-    player1Phone: '',
-    player1ID: '',
-    player2Name: '',
-    player2QQ: '',
-    player2Phone: '',
-    player2ID: '',
-    player3Name: '',
-    player3QQ: '',
-    player3Phone: '',
-    player3ID: '',
-    player4Name: '',
-    player4QQ: '',
-    player4Phone: '',
-    player4ID: '',
-    substitute1Name: '',
-    substitute1QQ: '',
-    substitute1Phone: '',
-    substitute1ID: '',
-    substitute2Name: '',
-    substitute2QQ: '',
-    substitute2Phone: '',
-    substitute2ID: '',
     teamInfo: '',
-    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/lol_top_bg.png",
-    competitionId: "",
-    val: "",
-    showBtn: true,
+    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/top.png",
+    sloganContentImg: "https://xys.jggjmm.com/SCWeb/commons/images/yiwu_slogan_conten.png",
+    bottomImage: "https://xys.jggjmm.com/SCWeb/commons/images/footer_logo.png",
+    topTitle: "线上报名",
+    matchId:"",
+    theSessionId:"",
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数 
-    this.setData({
-      competitionId: options.competitionId,
-      val: options.val,
-      showBtn: options.showBtn,
-
-      model: ['盐城', '镇江', '宿迁',
-        '无锡', '徐州', '连云港',
-        '淮安', '扬州', '常州',
-        '泰州', '南京', '苏州',
-        '南通',],
-      qqAllNumber: [
-        "88289909",
-        "542046162",
-        "530668442",
-        "133138641",
-        "297457514",
-        "208203738",
-        "208203738",
-        "445115357",
-        "160906371",
-        "321394224",
-        "684785615",
-        "261723304",
-        "546960484",
-      ],
-    })
-    console.log("competitionId:" + this.data.competitionId);
-    console.log("val:" + this.data.val);
-    console.log("showBtn:" + this.data.showBtn);
-  },
-  picker_model: function (e) {
     var that = this;
-    console.log("模式选中的的是：" + e.detail.value);
+    var sessionId = wx.getStorageSync('theSessionId');
     that.setData({
-      modelIndex: e.detail.value,
-      modelText: that.data.model[e.detail.value],
-      areaQQNumber: that.data.qqAllNumber[e.detail.value],
+      matchId: options.matchId,
+      theSessionId: sessionId,
+    })
+    console.log(that.data.matchId);
+    console.log(that.data.theSessionId);
+    that.requestData();
+  },
+  requestData() {
+    var that = this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 500
+    })
+    wx.request({
+      url: 'https://matchminiprogram.jggjmm.com/match_getMatchGameInfo',
+
+      data: {   // 这里写请求参数
+        sessionId: that.data.theSessionId,
+        matchGameId: that.data.matchId,
+      },
+      success: function (res) {
+        wx.stopPullDownRefresh()
+        console.log("match_getMatchGameInfo ：" + res.data.status);
+        console.log(res.data);
+        if (res.data.status == "y") {
+          
+          that.setData({
+            bgImageUrl: res.data.matchGameInfo.topImg,
+
+            topImageUrl: res.data.matchGameInfo.topImg,
+            sloganContentImg: res.data.matchGameInfo.timeImg,
+            bottomImage: res.data.matchGameInfo.footerImg,
+          })
+        }
+
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: '加载出错',
+          showCancel: false
+        })
+      },
+      complete: function (res) {
+        wx.hideToast()
+        wx.hideNavigationBarLoading()
+      },
     })
   },
   lolSubmitInfo: function () {
-    if (this.data.areaQQNumber.length == 0) {
-      wx.showToast({
-        title: '请选择参赛城市！',
-        icon: 'none'
-      })
-      return;
-    }
-    if (this.data.teamAddress.length == 0) {
-      wx.showToast({
-        title: '请填写战队学校！',
-        icon: 'none'
-      })
-      return;
-    }
     if (this.data.teamName.length == 0) {
       wx.showToast({
         title: '请填写队伍名称！',
@@ -191,12 +167,14 @@ Page({
 
   sendprbgInfo() {
     var that = this;
-    console.log("参赛赛制类型" + that.data.modelIndex == 1 ? '2' : '1');
+    console.log(that.data.matchId);
+    console.log(that.data.theSessionId);
     that.showLoading("正在提交，请稍后！");
     wx.request({
-      url: 'https://xys.jggjmm.com/SCWeb/game_userSignUp',
+      url: 'https://matchminiprogram.jggjmm.com/sign_userSignUp',
       data: {
-        gameType: "3", //联通杯
+        sessionId: that.data.theSessionId,
+        matchGameId: that.data.matchId,
         competitionType: '1', // 线上
         gameZone: '',
         city: that.data.modelText, //城市
@@ -238,8 +216,21 @@ Page({
     })
   },
   theLolRule: function () {
+
+    var that = this;
+    console.log("参赛matchId" + that.data.matchId  );
+    // if (that.data.gameType == 1) {
+    //   wx.navigateTo({
+    //     url: '../kingrule/kingrule'
+    //   })
+    // } else if (that.data.gameType == 3) {
+    //   wx.navigateTo({
+    //     url: '../prbgrule/prbgrule'
+    //   })
+    // }
+
     wx.navigateTo({
-      url: '../lolrule/lolrule'
+      url: '../normalRule/normalRule?matchId=' + that.data.matchId
     })
   },
   showLoading(message) {

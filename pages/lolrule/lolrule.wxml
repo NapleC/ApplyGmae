@@ -5,10 +5,6 @@
     <span class="top-text-area-line-text">赛事规则</span>
   </view>
 </view>
-<view class='title-view-padding'>
-  <text class='text-title'>赛事奖金</text>
-  <text class='text-content'>（单位：元）</text>
-</view>
 
 <view class="reward-area">
   <image class="reward-image" src="{{moneyImage}}" mode="widthFix" />
@@ -17,7 +13,7 @@
   <text class='text-title'>比赛报名</text>
 </view>
 <view class='view-padding'>
-  <text class='text-content'>一、通过扫描“京东报名H5”进行线上报名。线上报名时需填写战队名、姓名、QQ号，联系方式。在参赛时，报名战队成员需携带身份证、以便工作人员在现场确认选手参赛资格。未能在规定时间提前到场且未提前与组委会沟通的队伍，则视为弃权。</text>
+  <text class='text-content'>一、通过扫描小程序码进行线上报名。线上报名时需填写战队名、姓名、QQ号，联系方式。在参赛时，报名战队成员需携带身份证、以便工作人员在现场确认选手参赛资格。未能在规定时间提前到场且未提前与组委会沟通的队伍，则视为弃权。</text>
 </view>
 <view class='view-padding'>
   <text class='text-content'>二、比赛账号：参赛选手须在比赛服务器比赛，自备QQ帐号。</text>
@@ -33,7 +29,7 @@
   <text class='text-title'>参赛限制</text>
 </view>
 <view class='view-padding'>
-  <text class='text-content'>玩家在取得京东杯海选晋级资格之后，不允许在参加其他海选赛的比赛，特殊情况如战队解散，选手需向赛事组委会说明，组委会向该队队长核实情况属实后队员方可参赛，该战队之前获得的海选晋级资格自动取消，名额顺延。</text>
+  <text class='text-content'>玩家在取得海选晋级资格之后，不允许在参加其他海选赛的比赛，特殊情况如战队解散，选手需向赛事组委会说明，组委会向该队队长核实情况属实后队员方可参赛，该战队之前获得的海选晋级资格自动取消，名额顺延。</text>
 </view>
 
 <view class='title-view-padding'>

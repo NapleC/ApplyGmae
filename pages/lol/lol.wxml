@@ -61,3 +61,7 @@
   </view>
   <image bindtap='lolSubmitInfo' class="pic_background" src="../../images/lol_submit.png" mode="widthFix"></image>
 </view>
+
+<view class="reward-area">
+  <image bindtap='lolBack' class="reward-image" src="{{bottomImage}}" mode="widthFix"></image>
+</view>

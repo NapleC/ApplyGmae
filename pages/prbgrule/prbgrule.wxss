@@ -1,7 +1,7 @@
 /* pages/prbgrule/prbgrule.wxss */
 
 page {
-  background-color: #1d2122;
+  background-color: #0a080e;
 }
 
 .title-view-padding{

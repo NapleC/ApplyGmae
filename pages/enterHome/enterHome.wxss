@@ -17,7 +17,7 @@
 
 .suheng {
   position: fixed;
-  bottom: 70px;
+  bottom: 200rpx;
   left: 50%;
   transform: translatex(-50%);
 }

@@ -9,20 +9,16 @@ Page({
     banners: [],//轮播图数据源
     pageNum: 1,
     listData: [], //列表数据
-    slider: [
-      { picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000000rVobR3xG73f.jpg' },
-      { picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000000j6Tax0WLWhD.jpg' },
-      { picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000000a4LLK2VXxvj.jpg' },
-    ],
-    swiperCurrent: 0
+    swiperCurrent: 0,
+    selectedMatchId:"",
   },
   homeItemClick: function (e) {
-    var $data = e.currentTarget.dataset; 
-    console.log("e data:", $data.id );
+    // var $data = e.currentTarget.dataset;
+    // console.log("e data:", $data.id);
 
-    wx.navigateTo({
-      url: '../enterHome/enterHome?competitionId=' + $data.id + '&val=hello,bright789!!!&showBtn=false',
-    })
+    // wx.navigateTo({
+    //   url: '../enterHome/enterHome?competitionId=' + $data.id + '&val=hello,bright789!!!&showBtn=false',
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -32,7 +28,6 @@ Page({
   },
   requestData() {
     var that = this
-    console.log("当前页码：" + this.data.pageNum)
     if (that.data.listData.length < 1) {
       wx.showToast({
         title: '加载中',
@@ -43,22 +38,26 @@ Page({
       wx.showNavigationBarLoading()
     }
     wx.request({
-      url: 'https://gank.io/api/data/福利/10/' + this.data.pageNum,
+      url: 'https://matchminiprogram.jggjmm.com/home_getHomePageInfo',
       data: {}, // 这里写请求参数
       success: function (res) {
         wx.stopPullDownRefresh()
-        if (that.data.pageNum == 1) {
-          that.data.listData = [] // 清空数据
-        }
-        var list = that.data.listData;//拿到获取的数据
-        for (var i = 0, lenD = res.data.results.length; i < lenD; i++) {
-          list.push(res.data.results[i])
-        }
+        console.log(" home_getHomePageInfo: "+res.data.status);
+        console.log(res.data);
+        if (res.data.status == "y") {
 
-        that.setData({
-          listData: list,//更新数据
-          banners: that.data.listData.slice(0, Math.min(6, that.data.listData.length)) //截取数组
-        })
+          that.data.listData = [] // 清空数据
+          that.data.banners = [] // 清空数据
+          var bannersList = that.data.banners;//拿到获取的数据
+          for (var i = 0, lenD = res.data.matchInfoList.length; i < lenD; i++) {
+            bannersList.push(res.data.matchInfoList[i])
+          }
+
+          that.setData({
+            // listData: list,//更新数据
+            banners: bannersList
+          })
+        }
 
       },
       fail: function (res) {
@@ -73,18 +72,29 @@ Page({
       },
     })
   },
-   swiperChange: function (e) {
+  swiperChange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
     })
-  }, 
+  },
   swipclick: function (e) {
+    var that = this;
     // 点击图片触发事件
     console.log(this.data.banners[this.data.swiperCurrent]);
+    that.setData({
+      selectedMatchId: this.data.banners[this.data.swiperCurrent].matchId
+    });
+    console.log("selectedMatchId" + that.data.selectedMatchId);
 
-    wx.navigateTo({
-      url: '../apply/apply?competitionId=' + this.data.banners[this.data.swiperCurrent]._id + '&val=hello,banner!!!&showBtn=true',
-    })
+    if (that.data.banners[that.data.swiperCurrent].gameCount > 1) {
+      wx.navigateTo({
+        url: '../enterHome/enterHome?matchId=' + that.data.selectedMatchId,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../apply/apply?matchId=' + that.data.selectedMatchId,
+      })
+    }
   },
 
   /**
@@ -120,7 +130,7 @@ Page({
    */
   onPullDownRefresh: function () {
 
-    this.data.pageNum = 1;
+    // this.data.pageNum = 1;
     this.requestData();
   },
 
@@ -128,8 +138,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.data.pageNum++;
-    this.requestData();
+    // this.data.pageNum++;
+    // this.requestData();
   },
 
   /**

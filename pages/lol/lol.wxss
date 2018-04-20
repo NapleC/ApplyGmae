@@ -1,7 +1,7 @@
 /* pages/lol/lol.wxss */
 
 page {
-  background-color: #130f35;
+  background-color: #0a080e;
 }
 
 .main {
@@ -147,40 +147,6 @@ page {
   margin-bottom: 20px;
   height: 44px;
   width: 160px;
-}
-
-.top-text-area {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 16px;
-  margin-right: 16px;
-  text-align: center;
-  background-color: #130f35;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-}
-
-.top-text-area-middle-line:before {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 100%;
-  background-color: #fff; /*颜色需与主题大背景色一致，不然就露陷了*/
-  position: relative;
-  top: 22px; /*这个是用来调节线高*/
-  left: 0;
-}
-
-.top-text-area-line-text {
-  display: inline-block;
-  background: #130f35;
-  color: white;
-  padding: 0 8px 0 8px;
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  justify-content: center;
 }
 
 .home_address {

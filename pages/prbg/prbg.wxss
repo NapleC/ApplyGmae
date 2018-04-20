@@ -1,7 +1,7 @@
 /* pages/prbg/prbg.wxss */
 
 page {
-  background-color: #1d2122;
+  background-color: #0a080e;
   height: 100%;
   width: 100%;
 }
@@ -143,40 +143,6 @@ page {
   margin-bottom: 20px;
   height: 44px;
   width: 160px;
-}
-
-.top-text-area {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 16px;
-  margin-right: 16px;
-  text-align: center;
-  background-color: #1d2122;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-}
-
-.top-text-area-middle-line:before {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 100%;
-  background-color: #f89e13; /*线的颜色*/
-  position: relative;
-  top: 22px; /*这个是用来调节线高*/
-  left: 0;
-}
-
-.top-text-area-line-text {
-  display: inline-block;
-  background: #1d2122;
-  color: #f89e13;/*文字的颜色*/
-  padding: 0 8px 0 8px;
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  justify-content: center;
 }
 
 .home_address {  

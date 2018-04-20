@@ -1,0 +1,2 @@
+<!--pages/normalRule/normalRule.wxml-->
+<image class="background-image" mode="widthFix" src="{{matchGameRule}}"></image>

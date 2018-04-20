@@ -163,6 +163,7 @@
 .activity-one-area {
   border-radius: 8rpx;
   height: 100%;
+  width: 100%;
   flex-grow: 1;
   margin: 6rpx;
 }
@@ -193,4 +194,12 @@
   font-size: 24rpx;
   color: #666666;
   align-self: center;
+}
+
+
+
+.other-area-image {
+  display: flex;
+  height: 86rpx;
+  width: 86rpx;
 }

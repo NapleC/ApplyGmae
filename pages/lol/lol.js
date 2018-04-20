@@ -33,7 +33,8 @@ Page({
     leaderPhone: '',
     leaderQQ: '',
     teamInfo: '',
-    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/lol_top_bg.png",
+    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/top.png",
+    bottomImage: "https://xys.jggjmm.com/SCWeb/commons/images/footer_logo.png",
   },
   picker_model: function (e) {
     var that = this;

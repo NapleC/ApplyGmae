@@ -32,7 +32,7 @@
   margin-left: 16px;
   margin-right: 16px;
   text-align: center;
-  background-color: #130f35;
+  background-color: #0a080e;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -51,11 +51,18 @@
 
 .top-text-area-line-text {
   display: inline-block;
-  background: #130f35;
+  background: #0a080e;
   color: white;
   padding: 0 8px 0 8px;
   position: relative;
   font-size: 30px;
   font-weight: bold;
   justify-content: center;
+}
+.view_hide {
+  display: none;
+}
+
+.view_show {
+  display: block;
 }

@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/lol_top_bg.png",
-    moneyImage: "https://xys.jggjmm.com/SCWeb/commons/images/cj.png",
-    bottomImage: "https://xys.jggjmm.com/SCWeb/commons/images/rule_bottom.png",
+    topImageUrl: "https://xys.jggjmm.com/SCWeb/commons/images/top.png",
+    moneyImage: "https://xys.jggjmm.com/SCWeb/commons/images/reward_table.png",
+    bottomImage: "https://xys.jggjmm.com/SCWeb/commons/images/footer_logo.png",
   },
   prbgBack: function () {
     wx.navigateBack({
