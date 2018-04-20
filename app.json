@@ -4,14 +4,8 @@
     "pages/home/home",
     "pages/competition/competition",
     "pages/found/found",
-    "pages/logs/logs",
     "pages/apply/apply",
     "pages/enterHome/enterHome",
-    "pages/kingrule/kingrule",
-    "pages/prbg/prbg",
-    "pages/prbgrule/prbgrule",
-    "pages/lol/lol",
-    "pages/lolrule/lolrule",
     "pages/normalRule/normalRule"
   ],
   "window": {

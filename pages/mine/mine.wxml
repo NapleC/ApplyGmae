@@ -15,13 +15,15 @@
 <view class="list">
   <block wx:for="{{listData}}" wx:key="_id">
     <view class="list-item">
-      <image src="{{item.url}}" class="item-image" mode="aspectFill" />
-      <view class="item-title" bindtap="itemClick" id="{{index}}">
-        <text>类别: {{item.type}}</text>
-        <view class="item-title">
-          <text>时间: {{item.desc}}</text>
+      <image src="{{item.matchGameImg}}" class="item-image" mode="aspectFill" />
+      <view class="item-main">
+          <view>
+            <text class="item-text">{{item.matchGameTitile}}</text>
+          </view>
+          <view>
+            <text class="item-text"> 状态为: {{item.status}}</text>
+          </view>
         </view>
-      </view>
     </view>
   </block>
 </view>

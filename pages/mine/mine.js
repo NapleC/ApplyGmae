@@ -7,7 +7,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    pageNum: 1,
+    pageNum: 0,
     listData: [], //列表数据
     loginCode: "",
   },
@@ -92,10 +92,9 @@ Page({
       success: function (res) {
         console.log("user_getUserMatchList==" + res.data.status)
         console.log(res.data)
-        console.log(res.data)
         if (res.data.status == "y") {
           wx.stopPullDownRefresh()
-          if (that.data.pageNum == 1) {
+          if (that.data.pageNum == 0) {
             that.data.listData = [] // 清空数据
           }
           var list = that.data.listData;//拿到获取的数据
@@ -120,7 +119,8 @@ Page({
         wx.hideNavigationBarLoading()
       },
     })
-  }, swiperChange: function (e) {
+  },
+  swiperChange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
     })
@@ -131,7 +131,7 @@ Page({
    */
   onPullDownRefresh: function () {
 
-    this.data.pageNum = 1;
+    this.data.pageNum = 0;
     this.requestData();
   },
 

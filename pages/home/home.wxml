@@ -40,17 +40,16 @@
   <!-- 纵向列表 -->
   <view class="list" id="{{index}}">
     <block wx:for="{{listData}}" wx:key="_id">
-      <view class="list-item" bindtap="homeItemClick" data-id='{{item._id}}'>
+      <view class="list-item" bindtap="homeItemClick" data-id='{{item.newsId}}'>
         <view class="item-main">
           <view>
-            <text class="note2_text">这是哪种类别: {{item.type}}，还是说这是哪个标题类型是： {{item.type}}</text>
+            <text class="note2_text">{{item.title}}</text>
           </view>
           <view>
-            <text class="item-text">时间: {{item.desc}} </text>
-            <text class="item-text"> 来源: {{item.who}}</text>
+            <text class="item-text"> 来源: {{item.author}}</text>
           </view>
         </view>
-        <image src="{{item.url}}" class="item-side" mode="aspectFill" />
+        <image src="{{item.newsImage}}" class="item-side" mode="aspectFill" />
       </view>
     </block>
   </view>

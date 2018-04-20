@@ -3,7 +3,7 @@
 <view class="suheng">
   <block wx:for="{{btnData}}" wx:key="_id">
     <view class="list-item" bindtap="btnItemClick" data-index="{{index}}" data-id='{{item.matchGameId}}'>
-      <image class='click-btn' bindtap='prbg' src="../../images/prbg_btn.png" />
+      <image class='click-btn' bindtap='prbg' src="{{item.signUpBtn}}" />
     </view>
   </block>
 </view>

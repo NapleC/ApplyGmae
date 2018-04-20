@@ -1,9 +1,9 @@
 <!--pages/competition/competition.wxml-->
-<view class="swiper-container">
+<view class="swiper-container" style='display:none'>
   <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
     <block wx:for="{{slider}}" wx:key="unique">
       <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
-        <image src="{{item.picUrl}}" class="img" ></image>
+        <image src="{{item.picUrl}}" class="img"></image>
       </swiper-item>
     </block>
   </swiper>
@@ -15,21 +15,20 @@
 </view>
 <!-- 纵向列表 -->
 
-  <view class="flex-activity">
-<view class="list" bindtap="itemClick" id="{{index}}">
-  <block wx:for="{{listData}}" wx:key="_id">
-    <view class="list-item">
-      <image src="{{item.url}}" class="item-side" mode="aspectFill" />
-      <view class="item-main">
-        <view>
-          <text class="note2_text">这是哪种类别: {{item.type}}</text>
-        </view>
-        <view>
-          <text class="item-text">时间: {{item.desc}} </text>
-          <text class="item-text"> 来源: {{item.who}}</text>
+<view class="flex-activity">
+  <view class="list" bindtap="itemClick" id="{{index}}">
+    <block wx:for="{{listData}}" wx:key="_id">
+      <view class="list-item" bindtap="competitionItemClick" data-index='{{index}}' data-id='{{item.matchId}}'>
+        <image src="{{item.matchBannerImg}}" class="item-side" mode="aspectFill" />
+        <view class="item-main">
+          <view>
+            <text class="note2_text">{{item.matchTitle}}</text>
+          </view>
+          <view>
+            <text class="item-text">{{item.publishTimeStr}}</text>
+          </view>
         </view>
       </view>
-    </view>
-  </block>
-</view>
+    </block>
+  </view>
 </view>

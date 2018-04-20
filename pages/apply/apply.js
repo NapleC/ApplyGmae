@@ -63,6 +63,7 @@ Page({
             topImageUrl: res.data.matchGameInfo.topImg,
             sloganContentImg: res.data.matchGameInfo.timeImg,
             bottomImage: res.data.matchGameInfo.footerImg,
+            areaQQNumber: res.data.matchGameInfo.contactQq, 
           })
         }
 
@@ -191,11 +192,19 @@ Page({
         that.hideLoading();
         console.log("success:" + res.data.info)
         if (res.data.status == "y") {
-          wx.showModal({
-            title: '恭喜战队报名成功',
-            content: '队长加群：' + that.data.areaQQNumber,
-            showCancel: false
-          })
+          if (that.data.areaQQNumber.length>0){
+
+            wx.showModal({
+              title: '恭喜战队报名成功',
+              content: '队长加群：' + that.data.areaQQNumber,
+              showCancel: false
+            })
+          } else {
+            wx.showModal({
+              title: '恭喜战队报名成功',
+              showCancel: false
+            })
+          }
         } else {
           wx.showModal({
             title: res.data.info,

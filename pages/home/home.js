@@ -15,9 +15,8 @@ Page({
   homeItemClick: function (e) {
     // var $data = e.currentTarget.dataset;
     // console.log("e data:", $data.id);
-
     // wx.navigateTo({
-    //   url: '../enterHome/enterHome?competitionId=' + $data.id + '&val=hello,bright789!!!&showBtn=false',
+    //   url: '../apply/apply?matchId=' + that.data.selectedMatchId,
     // })
   },
   /**
@@ -48,13 +47,17 @@ Page({
 
           that.data.listData = [] // 清空数据
           that.data.banners = [] // 清空数据
-          var bannersList = that.data.banners;//拿到获取的数据
+          var bannersList = that.data.banners;//banner数据
           for (var i = 0, lenD = res.data.matchInfoList.length; i < lenD; i++) {
             bannersList.push(res.data.matchInfoList[i])
           }
+          var newsList = that.data.listData;//资讯数据
+          for (var i = 0, lenN = res.data.newsInfoList.length; i < lenN; i++) {
+            newsList.push(res.data.newsInfoList[i])
+          }
 
           that.setData({
-            // listData: list,//更新数据
+            listData: newsList,//更新数据
             banners: bannersList
           })
         }
@@ -92,7 +95,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../apply/apply?matchId=' + that.data.selectedMatchId,
+        url: '../apply/apply?matchId=' + that.data.banners[that.data.swiperCurrent].matchGameId,
       })
     }
   },

@@ -70,7 +70,7 @@ page {
   max-width: 480rpx;
   margin-left: 10rpx;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .item-text {
